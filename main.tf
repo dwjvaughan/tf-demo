@@ -16,7 +16,7 @@ resource "aws_instance" "kibana" {
   vpc_security_group_ids = ["sg-050bd1e3f07894680"]
   key_name               = "DV Key Pair"
 
-  tags {
+  tags = {
     Name         = "Kibana ${count.index + 1} "
     TowerManaged = "True"
     Role         = "Kibana"
