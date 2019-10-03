@@ -17,8 +17,9 @@ resource "aws_instance" "kibana" {
   key_name               = "DV Key Pair"
 
   tags = {
-    Name         = "Kibana ${count.index + 1} "
+    Name         = "${format("kibana-node-%02d", count.index + 1)}"
     TowerManaged = "True"
     Role         = "Kibana"
+    User         = "Dave Vaughan"
   }
 }
